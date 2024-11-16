@@ -1,0 +1,1 @@
+kubectl port-forward svc/backend-service 5000:80
