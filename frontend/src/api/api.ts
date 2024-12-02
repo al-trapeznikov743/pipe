@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://backend-service:5000',
+  baseURL: 'http://pipe.local/backend'
 });
 
 
