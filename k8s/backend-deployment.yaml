@@ -17,3 +17,23 @@ spec:
           image: al8trapeznikov/app-backend:latest
           ports:
             - containerPort: 5000
+          env:
+          - name: DATABASE_HOST
+            value: "postgres"
+          - name: DATABASE_PORT
+            value: "5432"
+          - name: DATABASE_NAME
+            valueFrom:
+              configMapKeyRef:
+                name: postgres-config
+                key: POSTGRES_DB
+          - name: DATABASE_USER
+            valueFrom:
+              configMapKeyRef:
+                name: postgres-config
+                key: POSTGRES_USER
+          - name: DATABASE_PASSWORD
+            valueFrom:
+              configMapKeyRef:
+                name: postgres-config
+                key: POSTGRES_PASSWORD
