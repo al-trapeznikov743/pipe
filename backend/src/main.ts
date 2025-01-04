@@ -1,7 +1,13 @@
+// import {development} from '../config';
 import {NestFactory} from '@nestjs/core';
 import {AppModule} from './app.module';
 
 const start = async() => {
+
+  // process.env.DATABASE_URL = development.connect;
+
+  // console.log('development: ', development);
+
   const PORT = process.env.PORT || 5000;
   const app = await NestFactory.create(AppModule);
 

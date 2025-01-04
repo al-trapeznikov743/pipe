@@ -6,3 +6,4 @@ data:
   POSTGRES_DB: pipe_db
   POSTGRES_USER: pipe_user
   POSTGRES_PASSWORD: pipe_pass
+  DATABASE_URL: postgresql://pipe_user:pipe_pass@postgres:5432/pipe_db?schema=public

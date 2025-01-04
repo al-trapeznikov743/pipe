@@ -1,0 +1,55 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          Int       @id @default(autoincrement())
+  username    String    @unique
+  email       String    @unique
+  passwordHash String
+  createdAt   DateTime  @default(now())
+  ChatParticipants ChatParticipant[]
+  Messages    Message[]
+}
+
+// Чаты, которые могут быть личными или групповыми
+model Chat {
+  id          Int       @id @default(autoincrement())
+  name        String?
+  isGroup     Boolean   @default(false)
+  createdAt   DateTime  @default(now())
+  ChatParticipants ChatParticipant[]
+  Messages    Message[]
+}
+
+// Связь пользователей с чатами
+model ChatParticipant {
+  id        Int       @id @default(autoincrement())
+  chatId    Int
+  userId    Int
+  joinedAt  DateTime  @default(now())
+
+  chat      Chat      @relation(fields: [chatId], references: [id], onDelete: Cascade)
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([chatId, userId])
+}
+
+// Сообщения в чатах
+model Message {
+  id        Int       @id @default(autoincrement())
+  chatId    Int
+  userId    Int
+  content   String
+  createdAt DateTime  @default(now())
+
+  chat      Chat      @relation(fields: [chatId], references: [id], onDelete: Cascade)
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+// Отслеживание прочтения сообщений

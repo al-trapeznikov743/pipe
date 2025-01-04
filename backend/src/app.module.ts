@@ -1,10 +1,16 @@
-import {RootController} from './root.controller';
 import {Module} from '@nestjs/common';
-import {AppController} from './app.controller';
-import {AppService} from './app.service';
+import {PrismaService} from './prisma.service';
+
+import {UsersController} from './modules/users/users.controller';
+import {ChatsController} from './modules/chats/chats.controller';
+import {MessagesController} from './modules/messages/messages.controller';
+
+import {UsersService} from './modules/users/users.service';
+import {ChatsService} from './modules/chats/chats.service';
+import {MessagesService} from './modules/messages/messages.service';
 
 @Module({
-  controllers: [RootController, AppController],
-  providers: [AppService]
+  controllers: [UsersController, ChatsController, MessagesController],
+  providers: [UsersService, ChatsService, MessagesService, PrismaService]
 })
 export class AppModule {};
