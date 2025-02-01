@@ -1,3 +1,3 @@
-import {AppNavigation} from './ui/AppNavigation';
+import AppNavigation from './ui/AppNavigation';
 
 export default AppNavigation;

@@ -1,13 +1,18 @@
-import {useTheme} from './providers/ThemeProvider';
+import {useDispatch} from 'react-redux';
 import {RouteProvider} from './providers/RouteProvider'
 import AppNavigation from '@/features/AppNavigation';
-import './styles/index.scss';
+import {useEffect} from 'react';
+import {userActions} from '@/entities/User';
 
 export const App = () => {
-  const {theme} = useTheme();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(userActions.initAuth());
+  }, [dispatch]);
 
   return (
-    <div className={`app ${theme}`}>
+    <div className={'app'}>
       <AppNavigation />
       <RouteProvider />
     </div>

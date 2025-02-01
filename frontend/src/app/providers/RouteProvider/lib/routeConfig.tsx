@@ -1,18 +1,18 @@
-import {MainPage} from '@/pages/Main';
-import {ChatsPage} from '@/pages/Chats';
-// import {NotFoundPage} from 'pages/NotFoundPage';
 import {RouteProps} from 'react-router-dom';
+import {MainPage} from '@/pages/Main';
+import {ChatPage} from '@/pages/ChatPage';
+import {NotFoundPage} from '@/pages/NotFoundPage';
 
 export enum AppRoutes {
   MAIN = 'main',
   CHAT = 'chat',
-  // NOT_FOUND = 'notFound'
+  NOT_FOUND = 'notFound'
 };
 
 export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.MAIN]: '/',
   [AppRoutes.CHAT]: '/chat',
-  // [AppRoutes.NOT_FOUND]: '*'
+  [AppRoutes.NOT_FOUND]: '*'
 };
 
 export const routeConfig: Record<AppRoutes, RouteProps> = {
@@ -22,10 +22,10 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
   },
   [AppRoutes.CHAT]: {
     path: RoutePath.chat,
-    element: <ChatsPage />
+    element: <ChatPage />
   },
-  // [AppRoutes.NOT_FOUND]: {
-  //   path: RoutePath.notFound,
-  //   element: <NotFoundPage />
-  // },
+  [AppRoutes.NOT_FOUND]: {
+    path: RoutePath.notFound,
+    element: <NotFoundPage />
+  },
 };

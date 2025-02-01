@@ -1,0 +1,39 @@
+.messageList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px 15px;
+
+  .messageContainer {
+    display: flex;
+    align-items: end;
+  
+    .messageIcon {
+      margin-right: 10px;
+      width: 35px;
+      height: 35px;
+    }
+  
+    .messages {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+  
+    .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      overflow: hidden;
+      border-radius: 50%;
+      background-color: #e0e0e0;
+  
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

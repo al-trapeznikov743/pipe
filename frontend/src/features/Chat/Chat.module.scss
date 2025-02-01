@@ -1,0 +1,17 @@
+.chat {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  width: 100%;
+  gap: 2px;
+
+  background-image: url('https://static-cse.canva.com/blob/759807/vk1776.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  .chatInput {
+    padding: 5px 0;
+    background: var(--hover-list-item-background);
+  }
+}

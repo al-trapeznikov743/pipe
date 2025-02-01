@@ -1,0 +1,43 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "title": "json-server",
+      "userId": 2
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "users": [
+    {
+      "id": 11,
+      "username": "admin",
+      "password": "123"
+    }
+  ],
+  "profile": { "name": "typicode" },
+  "chats": [
+    {
+      "id": 1,
+      "icon": "https://cdn-icons-png.flaticon.com/512/9165/9165147.png",
+      "label": "First Chat",
+      "lastMessage": "some message"
+    },
+    {
+      "id": 2,
+      "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJZ7Ajn1r3W6XqPBevgN0v-VX8mk4c1lmBZQ&s",
+      "label": "Second Chat",
+      "lastMessage": "some message"
+    }
+  ]
+}
