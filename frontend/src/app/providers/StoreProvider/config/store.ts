@@ -4,7 +4,6 @@ import {configureStore, ReducersMapObject} from '@reduxjs/toolkit';
 import {ExtendedStore, RootState, StateSchema} from './StateSchema';
 import {createReducerManager} from './reducerManager';
 import {userReducer} from '@/entities/User';
-import {chatsReducer} from '@/features/Chats';
 import {api} from '@/api/api';
 
 export const createReduxStore = (

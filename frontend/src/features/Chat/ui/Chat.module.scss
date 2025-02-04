@@ -1,0 +1,41 @@
+.chat {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  width: 100%;
+  gap: 2px;
+
+  background-image: url('https://static-cse.canva.com/blob/759807/vk1776.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  .messageList {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px 15px;
+  
+    .messageContainer {
+      display: flex;
+      align-items: end;
+    
+      .messageIcon {
+        margin-right: 10px;
+        width: 35px;
+        height: 35px;
+      }
+    
+      .messages {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+      }
+    }
+  }
+
+  .chatInput {
+    padding: 5px 0;
+    background: var(--hover-list-item-background);
+  }
+}

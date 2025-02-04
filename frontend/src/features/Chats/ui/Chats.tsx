@@ -3,11 +3,11 @@ import {ChatItem} from './ChatItem';
 import {useCallback, useEffect} from 'react';
 import {DynamicModuleLoader, ListItem, ReducersList, useAppDispatch} from '@/shared';
 import {getChats} from '../model/services/getChats';
-import * as s from './Chats.module.scss';
-import {getChatsData} from '../model/selectors/getChatsData';
+import {getChatsData} from '../model/selectors';
 import {useSelector} from 'react-redux';
 import {chatsReducer} from '../model/slice/chatsSlice';
 import NewChat from './NewChat';
+import * as s from './Chats.module.scss';
 
 const initReducers: ReducersList = {
   chats: chatsReducer
@@ -35,7 +35,13 @@ const Chats = () => {
         {
           chats.map(({id, icon, label, lastMessage}) => {
             return (
-              <ChatItem key={id} icon={icon} label={label} lastMessage={lastMessage} />
+              <ChatItem
+                key={id}
+                id={id}
+                icon={icon}
+                label={label}
+                lastMessage={lastMessage}
+              />
             );
           })
         }

@@ -1,32 +1,20 @@
 import Message from '@/entities/Message';
 import {classNames} from '@/shared';
-import * as s from './MessageList.module.scss';
-
-interface MessageType {
-  id: number,
-  text: string,
-  time: string
-};
-
-interface MessageData {
-  id: number;
-  chatId: number;
-  user: {icon: string};
-  messages: MessageType[];
-};
+import {MessagesData} from '@/features/Chats/model/types/chatsSchema';
+import * as s from './Chat.module.scss';
 
 interface MessageListProps {
-  messageList: MessageData[];
+  messages: MessagesData;
 };
 
-const MessageList = ({messageList}: MessageListProps) => {
+const MessageList = ({messages: messageList}: MessageListProps) => {
   return (
     <div className={s.messageList}>
       {
         messageList.map(({id, user: {icon}, messages}) => {
           return (
             <div key={id} className={s.messageContainer}>
-              <div className={classNames(s.icon, {}, [s.messageIcon])}>
+              <div className={classNames('user-icon', {}, [s.messageIcon])}>
                 <img src={icon} />
               </div>
               <div className={s.messages}>

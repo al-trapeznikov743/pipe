@@ -1,5 +1,9 @@
-import MessageList from '@/features/MessageList';
-import {Input} from '@/shared';
+import {useEffect} from 'react';
+import {useSelector} from 'react-redux';
+import {Input, useAppDispatch} from '@/shared';
+import {getChatId, getMessagesData} from '@/features/Chats/model/selectors';
+import MessageList from './MessageList';
+import {getMessages} from '@/features/Chats/model/services/getMessages';
 import * as s from './Chat.module.scss';
 
 const messagesMock = [
@@ -62,9 +66,23 @@ const messagesMock = [
 ];
 
 const Chat = () => {
+  const dispatch = useAppDispatch();
+
+  const chatId = useSelector(getChatId);
+  const messages = useSelector(getMessagesData);
+
+  console.log('chatId_L: ', chatId);
+  console.log('messages_L: ', messages);
+
+  useEffect(() => {
+    if (chatId) {
+      dispatch(getMessages(chatId));
+    }
+  }, [dispatch, chatId]);
+
   return (
     <div className={s.chat}>
-      <MessageList messageList={messagesMock} />
+      <MessageList messages={messages} />
       <div className={s.chatInput}>
         <Input />
       </div>

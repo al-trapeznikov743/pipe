@@ -1,5 +1,5 @@
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
-import {classNames} from '@/shared';
+import {classNames, Typography} from '@/shared';
 import * as s from './Chats.module.scss';
 
 interface NewChatProps {
@@ -10,7 +10,9 @@ const NewChat = ({className}: NewChatProps) => {
   return (
     <div className={classNames(s.newChat, {}, [className])}>
       <AddCircleOutlineIcon sx={{fontSize: 35}} />
-      {'Создать новый чат'}
+      <Typography>
+        {'Создать новый чат'}
+      </Typography>
     </div>
   );
 };

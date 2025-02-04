@@ -1,21 +1,30 @@
-import {classNames, ListItem} from '@/shared';
+import {classNames, ListItem, Typography, useAppDispatch} from '@/shared';
+import {chatsActions} from '../model/slice/chatsSlice';
 import * as s from './Chats.module.scss';
+import {AppDispatch} from '@/app/providers/StoreProvider';
 
 interface ChatItemProps {
+  id: number;
   icon: string;
   label: string;
   lastMessage: string;
 };
 
-export const ChatItem = ({icon, label, lastMessage}: ChatItemProps) => {
+const setChat = (dispatch: AppDispatch, chatId: number) => {
+  dispatch(chatsActions.setChatId(chatId)); 
+};
+
+export const ChatItem = ({id, icon, label, lastMessage}: ChatItemProps) => {
+  const dispatch = useAppDispatch();
+
   return (
-    <ListItem>
-      <div className={classNames(s.icon, {}, [s.chatIcon])}>
+    <ListItem onClick={() => setChat(dispatch, id)}>
+      <div className={classNames('user-icon', {}, [s.chatIcon])}>
         <img src={icon} />
       </div>
       <div className={s.chatInfo}>
-        <div>{label}</div>
-        <div>{lastMessage}</div>
+        <Typography>{label}</Typography>
+        <Typography>{lastMessage}</Typography>
       </div>
     </ListItem>
   );
