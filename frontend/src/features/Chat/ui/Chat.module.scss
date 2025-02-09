@@ -10,27 +10,39 @@
   background-position: center;
   background-repeat: no-repeat;
 
-  .messageList {
+  .messages {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 3px;
     padding: 8px 15px;
   
-    .messageContainer {
+    .messagesBlock {
       display: flex;
       align-items: end;
+
+      .message {
+        display: flex;
+        width: fit-content;
+        max-width: 100%;
+        border-radius: 6px;
+        padding: 5px;
+        background: var(--secondary-bg-color);
+        gap: 10px;
+      }
     
       .messageIcon {
         margin-right: 10px;
         width: 35px;
         height: 35px;
       }
-    
-      .messages {
-        display: flex;
-        flex-direction: column;
-        gap: 3px;
+
+      .withoutIcon {
+        margin-left: 45px;
       }
+    }
+
+    .blockEnd {
+      margin-bottom: 5px;
     }
   }
 

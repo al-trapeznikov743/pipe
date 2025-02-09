@@ -20,7 +20,7 @@ const Chats = () => {
   // const isLoading = useSelector(getChatsIsLoading);
   // const error = useSelector(getChatsError);
 
-  console.log('chats: ', chats);
+  // console.log('chats: ', chats);
 
   useEffect(() => {
     dispatch(getChats());

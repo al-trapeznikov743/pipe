@@ -24,9 +24,6 @@ export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = ({
   const store = useStore() as ExtendedStore;
 
   useEffect(() => {
-
-    console.log('reducers_415: ', reducers);
-
     Object.entries(reducers)
       .forEach(([storeKey, reducer]: RedusersListEntry) => {
         store.reducerManager.add(storeKey, reducer);

@@ -1,35 +1,39 @@
-import Message from '@/entities/Message';
-import {classNames} from '@/shared';
-import {MessagesData} from '@/features/Chats/model/types/chatsSchema';
+import {classNames, Typography} from '@/shared';
+import {StateMessagesSchema} from '@/features/Chats/model/types/chatsSchema';
 import * as s from './Chat.module.scss';
 
 interface MessageListProps {
-  messages: MessagesData;
+  chatId: number;
+  messages: StateMessagesSchema;
 };
 
-const MessageList = ({messages: messageList}: MessageListProps) => {
-  return (
-    <div className={s.messageList}>
-      {
-        messageList.map(({id, user: {icon}, messages}) => {
+const MessageList = ({chatId, messages}: MessageListProps) => (
+  <div className={s.messages}>
+    {
+      chatId ? messages[chatId]
+        ?.map(({id, text, time, user: {icon}, showIcon}, idx, arr) => {
+          const isEnd = showIcon && idx !== arr.length - 1;
+
           return (
-            <div key={id} className={s.messageContainer}>
-              <div className={classNames('user-icon', {}, [s.messageIcon])}>
-                <img src={icon} />
-              </div>
-              <div className={s.messages}>
-                {
-                  messages.map(({id, text, time}) => {
-                    return <Message key={id} text={text} time={time} />;
-                  })
-                }
+            <div key={id} className={classNames(s.messagesBlock, {[s.blockEnd]: isEnd})}>
+              {
+                showIcon && (
+                  <div className={classNames('user-icon', {}, [s.messageIcon])}>
+                    <img src={icon} />
+                  </div>
+                )
+              }
+              <div className={classNames(s.message, {[s.withoutIcon]: !showIcon})}>
+                {text}
+                <Typography>
+                  {time}
+                </Typography>
               </div>
             </div>
           );
-        })
-      }
-    </div>
-  );
-};
+        }) : []
+    }
+  </div>
+);
 
 export default MessageList;

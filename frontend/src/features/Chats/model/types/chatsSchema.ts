@@ -7,8 +7,7 @@ export interface ChatSchema {
 
 export type ChatsData = ChatSchema[];
 
-
-interface MessageType {
+/* interface MessageType {
   id: number,
   text: string,
   time: string
@@ -21,12 +20,38 @@ interface MessageSchema {
   messages: MessageType[];
 };
 
-export type MessagesData = MessageSchema[];
+export type MessagesData = MessageSchema[]; */
+
+
+
+
+
+
+
+export interface MessageSchema {
+  id: number;
+  chatId: number;
+  userId: number;
+  text: string;
+  time: string;
+  user: {icon: string};
+  showIcon?: boolean;
+};
+
+export type Messages = MessageSchema[];
+
+export type StateMessagesSchema = {
+  [key: number]: Messages;
+};
+
+
+
+
 
 export interface ChatsSchema {
   chatId: number;
   chats: ChatsData | [];
-  messages: MessagesData | [];
+  messages: StateMessagesSchema;
   chatsLoading: boolean;
   messagesLoading: boolean;
   error?: string | null;

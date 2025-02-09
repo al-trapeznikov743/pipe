@@ -8,8 +8,6 @@ export const getChats = createAsyncThunk<ChatsData, void, ThunkConfig<string>>(
     try {
       const response = await extra.api.get<ChatsData>('/chats');
 
-      console.log('response_90: ', response);
-
       if (!response?.data) {
         return null;
       }

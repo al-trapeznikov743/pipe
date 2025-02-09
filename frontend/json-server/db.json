@@ -40,7 +40,7 @@
       "lastMessage": "some message"
     }
   ],
-  "messages": [
+  "messages1": [
     {
       "id": 1,
       "chatId": 1,
@@ -96,6 +96,108 @@
         {"id": 1, "text": "First message", "time": "1 hour"},
         {"id": 2, "text": "Seconds message", "time": "1 hour"}
       ]
+    }
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "chatId": 1,
+      "userId": 1,
+      "text": "Some message",
+      "time": "1 hour",
+      "user": {
+        "icon": "https://icons.iconarchive.com/icons/icons8/android/256/Users-User-icon.png"
+      }
+    },
+    {
+      "id": 2,
+      "chatId": 1,
+      "userId": 1,
+      "text": "Hello there!",
+      "time": "59 minutes",
+      "user": {
+        "icon": "https://icons.iconarchive.com/icons/icons8/android/256/Users-User-icon.png"
+      }
+    },
+    {
+      "id": 3,
+      "chatId": 1,
+      "userId": 2,
+      "text": "How's it going?",
+      "time": "58 minutes",
+      "user": {
+        "icon": "https://cdn-icons-png.flaticon.com/512/219/219986.png"
+      }
+    },
+    {
+      "id": 4,
+      "chatId": 1,
+      "userId": 2,
+      "text": "Pretty good, thanks for asking!",
+      "time": "57 minutes",
+      "user": {
+        "icon": "https://cdn-icons-png.flaticon.com/512/219/219986.png"
+      }
+    },
+    {
+      "id": 5,
+      "chatId": 2,
+      "userId": 1,
+      "text": "What have you been up to?",
+      "time": "56 minutes",
+      "user": {
+        "icon": "https://icons.iconarchive.com/icons/icons8/android/256/Users-User-icon.png"
+      }
+    },
+    {
+      "id": 6,
+      "chatId": 2,
+      "userId": 2,
+      "text": "Just working on some stuff. You?",
+      "time": "55 minutes",
+      "user": {
+        "icon": "https://cdn-icons-png.flaticon.com/512/219/219986.png"
+      }
+    },
+    {
+      "id": 7,
+      "chatId": 2,
+      "userId": 1,
+      "text": "Same here, just grinding through tasks.",
+      "time": "54 minutes",
+      "user": {
+        "icon": "https://icons.iconarchive.com/icons/icons8/android/256/Users-User-icon.png"
+      }
+    },
+    {
+      "id": 8,
+      "chatId": 2,
+      "userId": 2,
+      "text": "That's the life, huh?",
+      "time": "53 minutes",
+      "user": {
+        "icon": "https://cdn-icons-png.flaticon.com/512/219/219986.png"
+      }
+    },
+    {
+      "id": 9,
+      "chatId": 2,
+      "userId": 3,
+      "text": "Haha, yeah. Sometimes it feels never-ending.",
+      "time": "52 minutes",
+      "user": {
+        "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQanlasPgQjfGGU6anray6qKVVH-ZlTqmuTHw&s"
+      }
+    },
+    {
+      "id": 10,
+      "chatId": 2,
+      "userId": 2,
+      "text": "Tell me about it!",
+      "time": "51 minutes",
+      "user": {
+        "icon": "https://cdn-icons-png.flaticon.com/512/219/219986.png"
+      }
     }
   ]
 }
